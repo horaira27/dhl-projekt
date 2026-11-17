@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Beispielseite zur Sendungsverfolgung für ein DHL-Studienprojekt.">
+  <title>Sendungsverfolgung | DHL – Studienprojekt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="projekt-hinweis">Studienprojekt – keine offizielle DHL-Webseite</div>
+  <header class="kopf">
+    <a class="marke" href="dhl_startseite_mit_texten.html" aria-label="Zur Startseite">DHL<span class="marke-strich"></span></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="dhl_startseite_mit_texten.html">Startseite</a>
+      <a href="leistungen.html">Leistungen</a>
+      <a href="sendung.html" aria-current="page">Sendungsverfolgung</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+  <main class="seiten-inhalt">
+    <p class="eyebrow">Immer informiert</p>
+    <h1 class="seiten-titel">Wo ist mein Paket?</h1>
+    <section class="sendungsverfolgung" aria-labelledby="sendung-titel">
+      <h2 id="sendung-titel">Sendungsverfolgung</h2>
+      <p class="seiten-beschreibung">Gib eine beliebige Beispielnummer ein, um den Demo-Status zu sehen.</p>
+      <form id="sendung-formular">
+        <label for="sendungsnummer">Sendungsnummer</label>
+        <input id="sendungsnummer" name="sendungsnummer" type="text" autocomplete="off" required>
+        <button type="submit">Beispielstatus anzeigen</button>
+      </form>
+      <p id="demo-ergebnis" role="status" aria-live="polite" hidden></p>
+      <p>Dies ist nur eine Demo. Es werden keine echten Sendungsdaten abgefragt oder übermittelt.</p>
+    </section>
+  </main>
+  <footer>
+    <strong>DHL – Studienprojekt</strong>
+    <p>Diese Webseite wurde ausschließlich für eine Hochschulübung erstellt und ist kein offizielles Angebot von DHL.</p>
+    <nav aria-label="Footernavigation"><a href="dhl_startseite_mit_texten.html">Startseite</a><a href="leistungen.html">Leistungen</a><a href="kontakt.html">Kontakt</a></nav>
+  </footer>
+  <script>
+    document.getElementById("sendung-formular").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const nummer = document.getElementById("sendungsnummer").value.trim();
+      const ergebnis = document.getElementById("demo-ergebnis");
+      ergebnis.textContent =
+        "Demo-Status für " + nummer + ": Die Sendung wurde im Paketzentrum bearbeitet. Dies ist ein Beispielstatus.";
+      ergebnis.hidden = false;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontaktinformationen für ein DHL-Studienprojekt.">
+  <title>Kontakt | DHL – Studienprojekt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="projekt-hinweis">Studienprojekt – keine offizielle DHL-Webseite</div>
+  <header class="kopf">
+    <a class="marke" href="dhl_startseite_mit_texten.html" aria-label="Zur Startseite">DHL<span class="marke-strich"></span></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="dhl_startseite_mit_texten.html">Startseite</a>
+      <a href="leistungen.html">Leistungen</a>
+      <a href="sendung.html">Sendungsverfolgung</a>
+      <a href="kontakt.html" aria-current="page">Kontakt</a>
+    </nav>
+  </header>
+  <main class="seiten-inhalt">
+    <p class="eyebrow">Fragen?</p>
+    <h1 class="seiten-titel">Wir helfen Ihnen weiter.</h1>
+    <form class="formular" id="kontakt-formular" onsubmit="return false;">
+      <h2 id="kontakt-titel">Kontakt</h2>
+      <p class="seiten-beschreibung">Sie haben Fragen zu den beispielhaften Versandangeboten? Diese Kontaktseite gehört zu einem Studienprojekt.</p>
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" autocomplete="name" required>
+
+      <label for="email">E-Mail-Adresse</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+
+      <label for="betreff">Betreff</label>
+      <select id="betreff" name="betreff" required>
+        <option value="">Bitte auswählen</option>
+        <option value="versand">Frage zum Versand</option>
+        <option value="sendung">Frage zu einer Sendung</option>
+        <option value="sonstiges">Sonstiges</option>
+      </select>
+
+      <label for="nachricht">Nachricht</label>
+      <textarea id="nachricht" name="nachricht" rows="5" required></textarea>
+
+      <button type="submit">Nachricht vorbereiten</button>
+      <p id="formular-status" role="status" aria-live="polite">Hinweis: In dieser Studienprojekt-Vorschau wird die Nachricht nicht versendet.</p>
+    </form>
+  </main>
+  <footer>
+    <strong>DHL – Studienprojekt</strong>
+    <p>Diese Webseite wurde ausschließlich für eine Hochschulübung erstellt und ist kein offizielles Angebot von DHL.</p>
+    <nav aria-label="Footernavigation"><a href="dhl_startseite_mit_texten.html">Startseite</a><a href="leistungen.html">Leistungen</a><a href="sendung.html">Sendungsverfolgung</a></nav>
+  </footer>
+  <script>
+    document.getElementById("kontakt-formular").addEventListener("submit", function (event) {
+      event.preventDefault();
+      document.getElementById("formular-status").textContent =
+        "Die Angaben sind ausgefüllt. In dieser Studienprojekt-Vorschau wird die Nachricht nicht versendet.";
+    });
+  </script>
+</body>
+</html>
